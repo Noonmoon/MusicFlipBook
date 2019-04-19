@@ -5,6 +5,7 @@ body{
 	background-color:#fcfcfc;
 	margin:0;
 	padding:0;
+	text-align: center;
 }
 
 .flipbook-viewport{
@@ -20,7 +21,7 @@ body{
 	margin:auto;
 }
 
-.flipbook-viewport .flipbook{
+.flipbook-viewport #flipbook{
 	width:922px;
 	height:600px;
 	left:-461px;
@@ -35,7 +36,7 @@ body{
 	background-size:100% 100%;
 }
 
-.flipbook .page{
+#flipbook .page{
 	-webkit-box-shadow:0 0 20px rgba(0,0,0,0.2);
 	-moz-box-shadow:0 0 20px rgba(0,0,0,0.2);
 	-ms-box-shadow:0 0 20px rgba(0,0,0,0.2);
@@ -51,7 +52,7 @@ body{
 	-ms-user-select: none;
 	user-select: none;
 	margin:0;
-}
+} 
 
 .flipbook-viewport .shadow{
 	-webkit-transition: -webkit-box-shadow 0.5s;
@@ -65,3 +66,20 @@ body{
 	-ms-box-shadow:0 0 20px #ccc;
 	box-shadow:0 0 20px #ccc;
 }
+
+.audio {
+	margin: 1rem auto;
+}
+
+.audio:focus {
+	outline: 0;
+}
+
+#two {
+	display:	none;
+}
+
+#four {
+	display:	none;
+}
+

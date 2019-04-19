@@ -2,13 +2,23 @@
 <head>
 <meta name="viewport" content="width = 1050, user-scalable = no" />
 <link rel="stylesheet" type="text/css" href="./css/basic.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 </head>
 <body>
 
+<audio controls class="audio" id="two">
+	<source src="audio/09.mp3" type="audio/mpeg">
+	Your browser does not support the audio tag.
+</audio>
+<audio controls class="audio" id="four">
+		<source src="audio/02.mp3" type="audio/mpeg">
+		Your browser does not support the audio tag.
+	</audio>
 <div class="flipbook-viewport">
 	<div class="container">
-		<div class="flipbook">
-			<div style="background-image:url(pages/cover.png)"></div>
+		<div id="flipbook">
+			<div style="background-image:url(pages/cover.png)">
+			</div>
 			<div style="background-image:url(pages/2.jpg)"></div>
 			<div style="background-image:url(pages/3.jpg)"></div>
 			<div style="background-image:url(pages/4.jpg)"></div>

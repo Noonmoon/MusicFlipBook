@@ -2,14 +2,7 @@
  * Basic sample
 */
 
-$('.flipbook').turn({
-	// Width
-
-	width:922,
-	
-	// Height
-
-	height:600,
+$('#flipbook').turn({
 
 	// Elevation
 
@@ -24,6 +17,24 @@ $('.flipbook').turn({
 	autoCenter: true
 
 });
+
+$("#flipbook").bind("turned", function(event, page, view) {
+	console.log("Page: "+view[0]);
+	switch (view[0]) {
+		case 0:
+			$('.audio').css('display', 'none')
+			break;
+		case 2:
+			$('#two').css('display', 'block')
+			break;
+		case 4:
+			$('#four').css('display', 'block')
+			break;
+		default:
+			$('audio').css('display', 'none')
+	}
+});
+
 
 
 
