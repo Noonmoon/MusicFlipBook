@@ -18,24 +18,30 @@ $('#flipbook').turn({
 
 });
 
+
+function stop_aud() {
+  var sounds = document.getElementsByTagName('audio');
+  for(i=0; i<sounds.length; i++) sounds[i].pause();
+}
+
 $("#flipbook").bind("turned", function(event, page, view) {
-	console.log("Page: "+view[0]);
+	stop_aud()
+
 	switch (view[0]) {
 		case 0:
-			$('.audio').css('display', 'none')
+			$('audio').css('display', 'none')
 			break;
 		case 2:
 			$('#two').css('display', 'block')
+			$('#four').css('display', 'none')
 			break;
 		case 4:
+			$('#two').css('display', 'none')
 			$('#four').css('display', 'block')
 			break;
 		default:
 			$('audio').css('display', 'none')
 	}
 });
-
-
-
 
 
