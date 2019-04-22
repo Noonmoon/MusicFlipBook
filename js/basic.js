@@ -9,25 +9,25 @@ $('#magazine').turn({
 	duration:1000,
 	when: {
 		turned: function(e, page) {
-			/*console.log('Current view: ', $(this).turn('view'));*/
+			let view = $(this).turn('view');
 
 			stop_aud();
-			// switch (view[0]) {
-			// 	case 0:
-			// 		$('audio').css('display', 'none')
-			// 		break;
-			// 	case 2:
-			// 		$('#two').css('display', 'block')
+			switch (view[0]) {
+				case 0:
+					$('audio').css('display', 'none')
+					break;
+				case 6:
+					$('#two').css('display', 'block')
 
-			// 		$('#four').css('display', 'none')
-			// 		break;
-			// 	case 4:
-			// 		$('#two').css('display', 'none')
-			// 		$('#four').css('display', 'block')
-			// 		break;
-			// 	default:
-			// 		$('audio').css('display', 'none')
-			// }
+					$('#four').css('display', 'none')
+					break;
+				case 8:
+					$('#two').css('display', 'none')
+					$('#four').css('display', 'block')
+					break;
+				default:
+					$('audio').css('display', 'none')
+			}
 		}
 	}
 });
