@@ -50,6 +50,24 @@ $(window).bind('keydown', function(e){
 		
 });
 
+$('#nav-menu').children().click(function() {
+	let book = $('#magazine');
+	let index = $('#nav-menu').children().index(this);
+
+	switch (index) {
+		case 0:
+			book.turn('previous');
+			break;
+		case 1:
+			book.turn('page', 2);
+			book.turn('stop');
+			break;
+		case 2:
+			book.turn('next');
+			break;
+	}
+})
+
 $('#toc').children().click(function() {
 	let book = $('#magazine');
 	let index = $('#toc').children().index(this);
