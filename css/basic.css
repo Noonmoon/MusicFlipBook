@@ -1,41 +1,27 @@
 /* Basic sample */
 
 body{
-	overflow:hidden;
-	background-color:#fcfcfc;
+	/* overflow:hidden; */
+	background-color:#f3f3f3;
 	margin:0;
 	padding:0;
-	text-align: center;
 }
 
-#flipbook{
-	position: absolute;
-	width:922px;
-	height:600px;
-  top: 50%;
-	left: 50%;
-	
-	transform: translate(-50%, -50%);
+
+#magazine{
+	height: 600px;
+	width: 900px;
+}
+#magazine .turn-page{
+	background-color:#ccc;
+	background-size: 100% 100%;
 }
 
-.page{
-	width:461px;
-	background-color:white;
-	background-repeat:no-repeat;
-	background-size:100% 100%;
-}
-
-#flipbook .page{
-	-webkit-box-shadow:0 0 20px rgba(0,0,0,0.2);
-	-moz-box-shadow:0 0 20px rgba(0,0,0,0.2);
-	-ms-box-shadow:0 0 20px rgba(0,0,0,0.2);
-	-o-box-shadow:0 0 20px rgba(0,0,0,0.2);
-	box-shadow:0 0 20px rgba(0,0,0,0.2);
-}
 
 
 .audio {
-	margin: 1rem auto;
+	position: absolute;
+	margin: 0 auto;
 }
 
 .audio:focus {
