@@ -1,5 +1,5 @@
 /*
- * Basic sample
+ * audio handling
 */
 
 
@@ -13,17 +13,13 @@ $('#magazine').turn({
 
 			stop_aud();
 			switch (view[0]) {
-				case 0:
-					$('audio').css('display', 'none')
-					break;
 				case 6:
 					$('#two').css('display', 'block')
-
-					$('#four').css('display', 'none')
+					document.getElementById('two').play();
 					break;
-				case 8:
-					$('#two').css('display', 'none')
+				case 10:
 					$('#four').css('display', 'block')
+					document.getElementById('four').play();
 					break;
 				default:
 					$('audio').css('display', 'none')
@@ -31,6 +27,19 @@ $('#magazine').turn({
 		}
 	}
 });
+
+function stop_aud() {
+	var sounds = document.getElementsByTagName('audio');
+	
+	for (let i = 0; i < sounds.length; i++) {
+		sounds[i].pause();
+		sounds[i].currentTime = 0;
+	}
+}
+
+/*
+ * Navigation
+*/
 
 $(window).bind('keydown', function(e){
 		
@@ -41,8 +50,4 @@ $(window).bind('keydown', function(e){
 		
 });
 
-function stop_aud() {
-  var sounds = document.getElementsByTagName('audio');
-  for(i=0; i<sounds.length; i++) sounds[i].pause();
-}
 

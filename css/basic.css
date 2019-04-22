@@ -5,6 +5,7 @@ body{
 	background-color:#f3f3f3;
 	margin:0;
 	padding:0;
+	text-align: center;
 }
 
 #magazine{
@@ -43,7 +44,6 @@ body{
 }
 
 .title {
-	margin-left: 2rem;
 	text-decoration: underline;
 }
 
@@ -69,6 +69,8 @@ body{
 	position: absolute;
 	margin: 0 auto;
 	bottom: 1rem;
+	left: 50%;
+	transform: translateX(-50%)
 }
 
 .audio:focus {
@@ -76,6 +78,10 @@ body{
 }
 
 #two, #four {
-	display:	none;
+	/* display:	none; */
+}
+
+.hide {
+	display: hidden;
 }
 
