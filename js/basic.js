@@ -50,4 +50,30 @@ $(window).bind('keydown', function(e){
 		
 });
 
+$('#toc').children().click(function() {
+	let book = $('#magazine');
+	let index = $('#toc').children().index(this);
 
+	switch (index) {
+		case 0:
+			book.turn('page', 6);
+			book.turn('stop');
+			break;
+		case 1:
+			book.turn('page', 10);
+			book.turn('stop');
+			break;
+		case 2:
+			book.turn('page', 0)
+			break;
+		case 3:
+			book.turn('page', 0)
+			break;
+		case 4:
+			book.turn('page', 0)
+			break;
+		case 5:
+			book.turn('page', 0)
+			break;
+	}
+})
