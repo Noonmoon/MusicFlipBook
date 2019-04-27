@@ -9,7 +9,10 @@ $('#magazine').turn({
 	duration: 1000,
 	when: {
 		turned: function(event, page, pageObject) {
-			$('#magazine').turn('stop')
+			let view = $('#magazine').turn('view')
+			console.log(view[0])
+
+
 		}
 	}
 });
@@ -19,19 +22,43 @@ $("#magazine").bind("turning", function(event, page, view) {
 
 	switch (view[0]) {
 		case 6:
+			$('#one').css('visibility', 'visible')
+			document.getElementById('one').play();
+			break;
+		case 10:
 			$('#two').css('visibility', 'visible')
 			document.getElementById('two').play();
 			break;
-		case 10:
+		case 14:
+			$('#three').css('visibility', 'visible')
+			document.getElementById('three').play();
+			break;
+		case 18:
 			$('#four').css('visibility', 'visible')
 			document.getElementById('four').play();
 			break;
-		case 14:
-			$('#four').css('visibility', 'visible')
-			document.getElementById('four').play();
+		case 22:
+			$('#five').css('visibility', 'visible')
+			document.getElementById('five').play();
+			break;
+		case 26:
+			$('#six').css('visibility', 'visible')
+			document.getElementById('six').play();
+			break;
+		case 30:
+			$('#seven').css('visibility', 'visible')
+			document.getElementById('seven').play();
+			break;
+		case 38:
+			$('#eight').css('visibility', 'visible')
+			document.getElementById('eight').play();
+			break;
+		case 42:
+			$('#my-video').css('display', 'block')
 			break;
 		default:
 			$('audio').css('visibility', 'hidden')
+			$('#my-video').css('display', 'none')
 	}
 });
 
@@ -85,22 +112,34 @@ $(document).on('click', '.index', function (e) {
 
 	switch (index) {
 		case 0:
-			book.turn('page', 6);
+			book.turn('page', 4);
 			break;
 		case 1:
-			book.turn('page', 10);
+			book.turn('page', 8);
 			break;
 		case 2:
-			book.turn('page', 14)
+			book.turn('page', 12)
 			break;
 		case 3:
-			book.turn('page', 18)
+			book.turn('page', 16)
 			break;
 		case 4:
-			book.turn('page', 22)
+			book.turn('page', 20)
 			break;
 		case 5:
-			book.turn('page', 26)
+			book.turn('page', 24)
+			break;
+		case 6:
+			book.turn('page', 28)
+			break;
+		case 7:
+			book.turn('page', 32)
+			break;
+		case 8:
+			book.turn('page', 38)
+			break;
+		case 9:
+			book.turn('page', 40)
 			break;
 	}
 });
