@@ -22,42 +22,42 @@ $("#magazine").bind("turning", function(event, page, view) {
 
 	switch (view[0]) {
 		case 6:
-			$('#one').css('visibility', 'visible')
+			$('#one').css('display', 'block')
 			document.getElementById('one').play();
 			break;
 		case 10:
-			$('#two').css('visibility', 'visible')
+			$('#two').css('display', 'block')
 			document.getElementById('two').play();
 			break;
 		case 14:
-			$('#three').css('visibility', 'visible')
+			$('#three').css('display', 'block')
 			document.getElementById('three').play();
 			break;
 		case 18:
-			$('#four').css('visibility', 'visible')
+			$('#four').css('display', 'block')
 			document.getElementById('four').play();
 			break;
 		case 22:
-			$('#five').css('visibility', 'visible')
+			$('#five').css('display', 'block')
 			document.getElementById('five').play();
 			break;
 		case 26:
-			$('#six').css('visibility', 'visible')
+			$('#six').css('display', 'block')
 			document.getElementById('six').play();
 			break;
 		case 30:
-			$('#seven').css('visibility', 'visible')
+			$('#seven').css('display', 'block')
 			document.getElementById('seven').play();
 			break;
 		case 38:
-			$('#eight').css('visibility', 'visible')
+			$('#eight').css('display', 'block')
 			document.getElementById('eight').play();
 			break;
 		case 42:
 			$('#my-video').css('display', 'block')
 			break;
 		default:
-			$('audio').css('visibility', 'hidden')
+			$('audio').css('display', 'hidden')
 			$('#my-video').css('display', 'none')
 	}
 });
