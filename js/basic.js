@@ -6,7 +6,7 @@
 $('#magazine').turn({
 	display: 'double',
 	elevation: 70,
-	duration: 1000,
+	duration: 1500,
 	when: {
 		turned: function(event, page, pageObject) {
 			let view = $('#magazine').turn('view')
@@ -19,46 +19,70 @@ $('#magazine').turn({
 
 $("#magazine").bind("turning", function(event, page, view) {
 	stop_aud();
+	$('#my-video').css('display', 'none')
+
+	if (view[0] == 4 || view[0] == 6) {
+		$('#two').css('display', 'none')
+		$('#one').css('display', 'block')
+	} else if (view[0] == 8 || view[0] == 10) {
+		$('#one').css('display', 'none')
+		$('#three').css('display', 'none')
+		$('#two').css('display', 'block')
+	} else if (view[0] == 12 || view[0] == 14) {
+		$('#two').css('display', 'none')
+		$('#four').css('display', 'none')
+		$('#three').css('display', 'block')
+	} else if (view[0] == 16 || view[0] == 18) {
+		$('#three').css('display', 'none')
+		$('#five').css('display', 'none')
+		$('#four').css('display', 'block')
+	} else if (view[0] == 20 || view[0] == 22) {
+		$('#four').css('display', 'none')
+		$('#six').css('display', 'none')
+		$('#five').css('display', 'block')
+	} else if (view[0] == 24 || view[0] == 26) {
+		$('#five').css('display', 'none')
+		$('#seven').css('display', 'none')
+		$('#six').css('display', 'block')
+	} else if (view[0] == 28 || view[0] == 30) {
+		$('#six').css('display', 'none')
+		$('#eight').css('display', 'none')
+		$('#seven').css('display', 'block')
+	} else if (view[0] == 36 || view[0] == 38) {
+		$('#eight').css('display', 'block')
+	} else if (view[0] == 42) {
+		$('#eight').css('display', 'none')
+		$('#my-video').css('display', 'block')
+		$('#magazine').turn('stop')
+	} else {
+		$('audio').css('display', 'none')
+	}
 
 	switch (view[0]) {
 		case 6:
-			$('#one').css('display', 'block')
 			document.getElementById('one').play();
 			break;
 		case 10:
-			$('#two').css('display', 'block')
 			document.getElementById('two').play();
 			break;
 		case 14:
-			$('#three').css('display', 'block')
 			document.getElementById('three').play();
 			break;
 		case 18:
-			$('#four').css('display', 'block')
 			document.getElementById('four').play();
 			break;
 		case 22:
-			$('#five').css('display', 'block')
 			document.getElementById('five').play();
 			break;
 		case 26:
-			$('#six').css('display', 'block')
 			document.getElementById('six').play();
 			break;
 		case 30:
-			$('#seven').css('display', 'block')
 			document.getElementById('seven').play();
 			break;
 		case 38:
-			$('#eight').css('display', 'block')
 			document.getElementById('eight').play();
 			break;
-		case 42:
-			$('#my-video').css('display', 'block')
-			break;
-		default:
-			$('audio').css('display', 'hidden')
-			$('#my-video').css('display', 'none')
 	}
 });
 
