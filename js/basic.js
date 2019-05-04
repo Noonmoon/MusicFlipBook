@@ -1,23 +1,28 @@
 /*
- * audio handling
+ * Initialize
  */
 
 
 $('#magazine').turn({
 	display: 'double',
 	elevation: 70,
-	duration: 1500,
-	when: {
-		turned: function(event, page, pageObject) {
-			let view = $('#magazine').turn('view')
-			console.log(view[0])
-
-
-		}
-	}
+	duration: 1500
 });
 
-$("#magazine").bind("turning", function(event, page, view) {
+/*
+ * Turning Events
+ */
+
+function stop_aud() {
+	var sounds = document.getElementsByTagName('audio');
+
+	for (let i = 0; i < sounds.length; i++) {
+		sounds[i].pause();
+		sounds[i].currentTime = 0;
+	}
+}
+
+$("#magazine").bind("turning", function (event, page, view) {
 	stop_aud();
 	$('#my-video').css('display', 'none')
 
@@ -86,14 +91,6 @@ $("#magazine").bind("turning", function(event, page, view) {
 	}
 });
 
-function stop_aud() {
-	var sounds = document.getElementsByTagName('audio');
-
-	for (let i = 0; i < sounds.length; i++) {
-		sounds[i].pause();
-		sounds[i].currentTime = 0;
-	}
-}
 
 /*
  * Navigation
@@ -167,7 +164,3 @@ $(document).on('click', '.index', function (e) {
 			break;
 	}
 });
-
-
-
-
